@@ -5,49 +5,117 @@ body {
     margin: 0; 
     padding: 0;
 }
+
 .header { 
     background-color: #C1272D; 
     color: white; 
     padding: 20px; 
     text-align: center;
 }
+
 .logo { 
     width: 150px; 
     margin-bottom: 10px;
 }
+
 .container { 
     display: flex; 
     flex-wrap: wrap; 
     justify-content: center; 
     padding: 20px;
+    gap: 20px;
 }
+
+/* Amélioration des cartes */
 .card { 
     background: white; 
     width: 300px; 
-    margin: 15px; 
     border-radius: 10px; 
     box-shadow: 0px 4px 10px rgba(0,0,0,0.2); 
     text-align: center; 
     overflow: hidden; 
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
 .card:hover { 
     transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
 }
+
 .card a { 
     text-decoration: none; 
     color: black; 
     display: block;
 }
+
 .card-img { 
     width: 100%; 
     height: 200px; 
     background-size: cover; 
     background-position: center; 
+    background-repeat: no-repeat; 
+    display: block;
     border-bottom: 5px solid #C1272D;
 }
+
 p { 
     font-size: 18px; 
     font-weight: bold; 
     margin: 15px 0;
+}
+
+/* Ajout des boutons pour la navigation */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #C1272D;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #A12025;
+    transform: scale(1.05);
+}
+
+/* Amélioration de l'affichage des visites */
+.iframe-container {
+    margin: 20px auto;
+    max-width: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+iframe {
+    border: none;
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .iframe-container {
+        max-width: 100%;
+    }
 }
