@@ -13,25 +13,27 @@
     </div>
 
     <div class="iframe-container">
-        <iframe id="visite-brignais" src="https://scan.avomovr.fr/show/?m=vx1kmMnmxNF" width="100%" height="500px" onload="checkIframe()"></iframe>
+        <iframe id="visite-brignais" src="https://scan.avomovr.fr/show/?m=vx1kmMnmxNf" width="100%" height="500px" onload="checkIframe()"></iframe>
         <p id="iframe-error" style="display: none; color: red;">
             ⚠ La visite ne peut pas être affichée ici. <br>
-            <a href="https://scan.avomovr.fr/show/?m=vx1kmMnmxNF" target="_blank">Cliquez ici pour l'ouvrir dans une nouvelle fenêtre</a>.
+            <a href="https://scan.avomovr.fr/show/?m=vx1kmMnmxNf" target="_blank">Cliquez ici pour l'ouvrir dans une nouvelle fenêtre</a>.
         </p>
     </div>
 
     <div class="buttons">
         <a href="index.html" class="btn">Retour à l'accueil</a>
-        <a href="https://scan.avomovr.fr/show/?m=vx1kmMnmxNF" target="_blank" class="btn">Ouvrir dans une nouvelle fenêtre</a>
+        <a href="https://scan.avomovr.fr/show/?m=vx1kmMnmxNf" target="_blank" class="btn">Ouvrir dans une nouvelle fenêtre</a>
     </div>
 
     <script>
         function checkIframe() {
             var iframe = document.getElementById('visite-brignais');
-            if (!iframe.contentWindow || iframe.contentWindow.length == 0) {
-                document.getElementById('iframe-error').style.display = 'block';
-                iframe.style.display = 'none';
-            }
+            setTimeout(function () {
+                if (!iframe.contentWindow || iframe.contentWindow.length == 0) {
+                    document.getElementById('iframe-error').style.display = 'block';
+                    iframe.style.display = 'none';
+                }
+            }, 3000); // Attendre 3 secondes pour laisser l'iframe se charger
         }
     </script>
 </body>
